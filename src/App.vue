@@ -1,7 +1,11 @@
 <script>
   import axios from 'axios'
+  import Search from './components/Search.vue'
 
   export default {
+    components: {
+
+    },
     data() {
       return {
         flagPopular: false,
@@ -28,10 +32,7 @@
   <header class="header">
     <div class="search">
         <h3>Search of FILMS</h3>
-        <div class="form1">
-            <input class="input" type="text" placeholder="search">
-            <button class="get">GET</button>
-        </div>
+        <Search/>
         <div class="form2">
           <button @click="getSourseApiPopular" class="popular">POPULAR</button>
         </div>

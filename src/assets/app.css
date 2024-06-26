@@ -1,6 +1,8 @@
 h3 {
     font-size: 30px;
     width: 10vw;
+    color: brown;
+    font-weight: bolder;
   }
   .header {
       display: flex;
@@ -22,7 +24,8 @@ h3 {
   }
   .input {
     border: none;
-    width: 200px;
+    min-width: 300px;
+    width: max-content;
     height: 30px;
     font-size: 16px;
   }

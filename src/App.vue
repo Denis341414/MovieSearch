@@ -1,8 +1,11 @@
 <script>
+  import Button from './components/button.vue'
   import axios from 'axios'
-  
+
   export default {
-    
+    components: {
+      Button
+    },
     data() {
       return {
         flagPopular: false,
@@ -70,10 +73,10 @@
         <h3>Search of FILMS</h3>
         <div class="form1">
           <input v-model="name" class="input" type="text" placeholder="search">
-          <button @click="getPlayersOnName" class="get">GET</button>
+          <Button :name="String('GET')" @click="getPlayersOnName"/>
         </div>
         <div class="form2">
-          <button @click="getSourseApiPopular" class="popular">POPULAR</button>
+          <Button @click="getSourseApiPopular" :name="String('POPULAR')"/>
         </div>
     </div>
   </header>

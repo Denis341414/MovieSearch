@@ -1,10 +1,13 @@
 <script>
-  import Button from './components/button.vue'
-  import axios from 'axios'
+import Popular from './components/Popular.vue';
+import Button from './components/button.vue'
+
+import axios from 'axios'
 
   export default {
     components: {
-      Button
+      Button,
+      Popular,
     },
     data() {
       return {
@@ -60,9 +63,6 @@
         })
 
       },
-      setNameFilms(el) {
-        this.name = el.title
-      }
     },
   }
 </script>
@@ -82,10 +82,11 @@
   </header>
   <main class="main">
     <div v-if="flagPopular == true" class="cards">
-      <div v-for="el in info" class="card">
+      <Popular :info="info"/>
+      <!-- <div v-for="el in info" class="card">
         <p :style="`background-image: url(${el.posterUrl})`" class="name"></p>
         <a @click="setNameFilms(el)" href="#" class="watch">WATCH</a>
-      </div>
+      </div> -->
     </div>
 
     <div v-else-if="flagWatch == true" class="cards">

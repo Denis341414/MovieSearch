@@ -1,6 +1,7 @@
 <script>
 import Popular from './components/Popular.vue';
-import Button from './components/button.vue'
+import Button from './components/button.vue';
+import Card from '././components/card.vue'
 
 import axios from 'axios'
 
@@ -8,6 +9,7 @@ import axios from 'axios'
     components: {
       Button,
       Popular,
+      Card
     },
     data() {
       return {
@@ -83,24 +85,14 @@ import axios from 'axios'
   <main class="main">
     <div v-if="flagPopular == true" class="cards">
       <Popular :info="info"/>
-      <!-- <div v-for="el in info" class="card">
-        <p :style="`background-image: url(${el.posterUrl})`" class="name"></p>
-        <a @click="setNameFilms(el)" href="#" class="watch">WATCH</a>
-      </div> -->
     </div>
 
     <div v-else-if="flagWatch == true" class="cards">
-      <div class="card">
-        <p :style="`background-image: url(${posterThichElementUrl})`" class="name"></p>
-        <a @click="" href="#" class="watch">WATCH</a>
-      </div>
+      <Card :posterURL="posterThichElementUrl"/>
     </div>
 
     <div v-else-if="flagStoped == true" class="cards">
-      <div class="card">
-        <p :style="`background-image: url(${posterThichElementUrl})`" class="name"></p>
-        <a @click="" :href="urlElement" class="watch">WATCH</a>
-      </div>
+      <Card :posterURL="posterThichElementUrl"/>
     </div>
   </main> 
 </template>

@@ -1,7 +1,10 @@
 <script>
 export default {
     props: {
-        name
+        name: {
+            type: String,
+            required: true
+        }
     },
     data() {
         return {
